@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-</head>
+@extends('layouts.app')
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <a class="header__logo" href="/">
-                Contact Form
-            </a>
-        </div>
-    </header>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" >
+@endsection
 
-    <main>
+@section('content')
+
         <div class="contact-form__content">
             <div class="contact-form__heading">
                 <h2>お問い合わせ</h2>
@@ -32,10 +19,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="text" name="name" placeholder="テスト太郎" />
+                            <input type="text" name="name" placeholder="テスト太郎" value="{{ old('name') }} />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実行したら記述します。-->
+                            @error('name')
+                            {{ $massage }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -49,7 +38,9 @@
                             <input type="email" name="email" placeholder="test@example.com" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実行したら記述します。-->
+                             @error('email')
+                            {{ $massage }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -63,7 +54,9 @@
                             <input type="tel" name="tel" placeholder="09012345678" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実行したら記述します。-->
+                             @error('tel')
+                            {{ $massage }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -82,6 +75,4 @@
                 </div>
             </form>
         </div>
-    </main>
-</body>
-</html>
+@endsection

@@ -38,7 +38,7 @@
                             <input type="email" name="email" placeholder="test@example.com" />
                         </div>
                         <div class="form__error">
-                             @error('email')
+                            @error('email')
                             {{ $massage }}
                             @enderror
                         </div>
@@ -54,7 +54,7 @@
                             <input type="tel" name="tel" placeholder="09012345678" />
                         </div>
                         <div class="form__error">
-                             @error('tel')
+                            @error('tel')
                             {{ $massage }}
                             @enderror
                         </div>

@@ -37,11 +37,11 @@ class ContactRequest extends FormRequest
             'name.max' => '名前を255文字以下で入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.string' => 'メールアドレスを文字列で入力してください',
-           'email.email' => '有効なメールアドレス形式を入力してください',
-           'email.max' => 'メールアドレスを255文字以下で入力してください',
-           'tel.required' => '電話番号を入力してください',
+            'email.email' => '有効なメールアドレス形式を入力してください',
+            'email.max' => 'メールアドレスを255文字以下で入力してください',
+            'tel.required' => '電話番号を入力してください',
             'tel.numeric' => '電話番号を数値で入力してください',
             'tel.digits_between' => '電話番号を10桁から11桁の間で入力してください',
-        ]
+        ];
     }
 }
